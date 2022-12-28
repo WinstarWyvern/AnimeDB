@@ -1,4 +1,4 @@
-package com.example.anime_db;
+package com.example.anime_db.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

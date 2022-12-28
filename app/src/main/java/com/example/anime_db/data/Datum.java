@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Example {
+public class Datum {
     @SerializedName("mal_id")
     @Expose
     private Integer malId;
@@ -83,13 +83,13 @@ public class Example {
     private String synopsis;
     @SerializedName("background")
     @Expose
-    private Object background;
+    private String background;
     @SerializedName("season")
     @Expose
-    private Object season;
+    private String season;
     @SerializedName("year")
     @Expose
-    private Object year;
+    private Integer year;
     @SerializedName("broadcast")
     @Expose
     private Broadcast broadcast;
@@ -113,7 +113,7 @@ public class Example {
     private List<Theme> themes = null;
     @SerializedName("demographics")
     @Expose
-    private List<Object> demographics = null;
+    private List<Demographic> demographics = null;
 
     public Integer getMalId() {
         return malId;
@@ -315,27 +315,27 @@ public class Example {
         this.synopsis = synopsis;
     }
 
-    public Object getBackground() {
+    public String getBackground() {
         return background;
     }
 
-    public void setBackground(Object background) {
+    public void setBackground(String background) {
         this.background = background;
     }
 
-    public Object getSeason() {
+    public String getSeason() {
         return season;
     }
 
-    public void setSeason(Object season) {
+    public void setSeason(String season) {
         this.season = season;
     }
 
-    public Object getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(Object year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
@@ -395,11 +395,11 @@ public class Example {
         this.themes = themes;
     }
 
-    public List<Object> getDemographics() {
+    public List<Demographic> getDemographics() {
         return demographics;
     }
 
-    public void setDemographics(List<Object> demographics) {
+    public void setDemographics(List<Demographic> demographics) {
         this.demographics = demographics;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.anime_db;
+package com.example.anime_db.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
@@ -7,10 +7,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.example.anime_db.R;
+import com.example.anime_db.adapter.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,5 +42,4 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
     }
-
 }
