@@ -1,10 +1,12 @@
 package com.example.anime_db.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,7 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.anime_db.R;
+import com.example.anime_db.activity.DetailAnimeActivity;
 import com.example.anime_db.data.Datum;
+import com.example.anime_db.data.Jpg;
 
 import java.util.List;
 
@@ -32,6 +36,25 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         view = inflater.inflate(R.layout.item_anime, parent, false);
 
         AnimeAdapter.MyViewHolder viewHolder = new AnimeAdapter.MyViewHolder(view);
+        viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(parent.getContext(), DetailAnimeActivity.class);
+                Datum animeData = new Datum();
+//                animeData = resultList.get(viewHolder.getBindingAdapterPosition());
+                animeData.setTitle(resultList.get(viewHolder.getBindingAdapterPosition()).getTitle());
+                animeData.setSynopsis(resultList.get(viewHolder.getBindingAdapterPosition()).getSynopsis());
+                animeData.setImages(resultList.get(viewHolder.getBindingAdapterPosition()).getImages());
+
+                Jpg imageData = new Jpg();
+
+                imageData.setImageUrl(animeData.getImages().getJpg().getImageUrl());
+
+                intent.putExtra(DetailAnimeActivity.stringData, animeData);
+                intent.putExtra(DetailAnimeActivity.pictureData, imageData);
+                parent.getContext().startActivity(intent);
+            }
+        });
         return viewHolder;
     }
 
@@ -50,11 +73,13 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title, synopsis;
         ImageView poster;
+        RelativeLayout relativeLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             poster = itemView.findViewById(R.id.imgAnime);
             title = itemView.findViewById(R.id.titleAnime);
             synopsis = itemView.findViewById(R.id.synopsisAnime);
+            relativeLayout = itemView.findViewById(R.id.layoutSingleAnime);
         }
     }
 }

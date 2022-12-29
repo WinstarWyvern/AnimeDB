@@ -1,11 +1,14 @@
 package com.example.anime_db.data;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
-public class Datum {
+public class Datum implements Parcelable {
     @SerializedName("mal_id")
     @Expose
     private Integer malId;
@@ -114,6 +117,87 @@ public class Datum {
     @SerializedName("demographics")
     @Expose
     private List<Demographic> demographics = null;
+
+    public Datum(Parcel in) {
+        if (in.readByte() == 0) {
+            malId = null;
+        } else {
+            malId = in.readInt();
+        }
+        url = in.readString();
+        byte tmpApproved = in.readByte();
+        approved = tmpApproved == 0 ? null : tmpApproved == 1;
+        title = in.readString();
+        titleEnglish = in.readString();
+        titleJapanese = in.readString();
+        titleSynonyms = in.createStringArrayList();
+        type = in.readString();
+        source = in.readString();
+        if (in.readByte() == 0) {
+            episodes = null;
+        } else {
+            episodes = in.readInt();
+        }
+        status = in.readString();
+        byte tmpAiring = in.readByte();
+        airing = tmpAiring == 0 ? null : tmpAiring == 1;
+        duration = in.readString();
+        rating = in.readString();
+        if (in.readByte() == 0) {
+            score = null;
+        } else {
+            score = in.readDouble();
+        }
+        if (in.readByte() == 0) {
+            scoredBy = null;
+        } else {
+            scoredBy = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            rank = null;
+        } else {
+            rank = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            popularity = null;
+        } else {
+            popularity = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            members = null;
+        } else {
+            members = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            favorites = null;
+        } else {
+            favorites = in.readInt();
+        }
+        synopsis = in.readString();
+        background = in.readString();
+        season = in.readString();
+        if (in.readByte() == 0) {
+            year = null;
+        } else {
+            year = in.readInt();
+        }
+    }
+
+    public static final Creator<Datum> CREATOR = new Creator<Datum>() {
+        @Override
+        public Datum createFromParcel(Parcel in) {
+            return new Datum(in);
+        }
+
+        @Override
+        public Datum[] newArray(int size) {
+            return new Datum[size];
+        }
+    };
+
+    public Datum() {
+
+    }
 
     public Integer getMalId() {
         return malId;
@@ -401,5 +485,83 @@ public class Datum {
 
     public void setDemographics(List<Demographic> demographics) {
         this.demographics = demographics;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        if (malId == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(malId);
+        }
+        parcel.writeString(url);
+        parcel.writeByte((byte) (approved == null ? 0 : approved ? 1 : 2));
+        parcel.writeString(title);
+        parcel.writeString(titleEnglish);
+        parcel.writeString(titleJapanese);
+        parcel.writeStringList(titleSynonyms);
+        parcel.writeString(type);
+        parcel.writeString(source);
+        if (episodes == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(episodes);
+        }
+        parcel.writeString(status);
+        parcel.writeByte((byte) (airing == null ? 0 : airing ? 1 : 2));
+        parcel.writeString(duration);
+        parcel.writeString(rating);
+        if (score == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(score);
+        }
+        if (scoredBy == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(scoredBy);
+        }
+        if (rank == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(rank);
+        }
+        if (popularity == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(popularity);
+        }
+        if (members == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(members);
+        }
+        if (favorites == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(favorites);
+        }
+        parcel.writeString(synopsis);
+        parcel.writeString(background);
+        parcel.writeString(season);
+        if (year == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(year);
+        }
     }
 }
