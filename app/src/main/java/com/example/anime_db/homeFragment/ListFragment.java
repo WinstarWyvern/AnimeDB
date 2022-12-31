@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +13,10 @@ import android.widget.SearchView;
 
 import com.example.anime_db.R;
 import com.example.anime_db.adapter.AnimeAdapter;
-import com.example.anime_db.config.ServerConfig;
-import com.example.anime_db.data.Datum;
+import com.example.anime_db.model.Datum;
 import com.example.anime_db.rest.ApiClient;
 import com.example.anime_db.rest.ApiInterface;
-import com.example.anime_db.data.Response;
+import com.example.anime_db.model.Response;
 
 import java.util.List;
 

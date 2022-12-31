@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.anime_db.R;
-import com.example.anime_db.data.Datum;
-import com.example.anime_db.data.Jpg;
+import com.example.anime_db.model.Datum;
+import com.example.anime_db.model.Jpg;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 

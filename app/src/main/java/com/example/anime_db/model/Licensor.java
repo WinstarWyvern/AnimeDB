@@ -1,9 +1,9 @@
-package com.example.anime_db.data;
+package com.example.anime_db.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Theme {
+public class Licensor {
     @SerializedName("mal_id")
     @Expose
     private Integer malId;

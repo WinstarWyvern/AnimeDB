@@ -1,6 +1,6 @@
 package com.example.anime_db.rest;
 
-import com.example.anime_db.data.Response;
+import com.example.anime_db.model.Response;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

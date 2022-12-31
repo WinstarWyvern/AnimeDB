@@ -1,4 +1,4 @@
-package com.example.anime_db.data;
+package com.example.anime_db.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
