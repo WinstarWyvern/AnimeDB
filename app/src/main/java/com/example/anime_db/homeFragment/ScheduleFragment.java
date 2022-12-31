@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.anime_db.R;
 import com.example.anime_db.adapter.AnimeAdapter;
@@ -73,6 +74,7 @@ public class ScheduleFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 days = adapterView.getSelectedItem().toString();
                 CallRetrofit();
+                Toast.makeText(getContext(),"This is " + days +"'s Schedule", Toast.LENGTH_SHORT).show();
             }
 
             @Override
