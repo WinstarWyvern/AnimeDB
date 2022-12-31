@@ -7,11 +7,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.example.anime_db.homeFragment.ListFragment;
 import com.example.anime_db.homeFragment.UserFragment;
-import com.example.anime_db.homeFragment.UserListFragment;
+import com.example.anime_db.homeFragment.ScheduleFragment;
 
-public class ViewPagerAdapter extends FragmentStateAdapter {
+public class MainViewPagerAdapter extends FragmentStateAdapter {
 
-    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public MainViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
 
@@ -22,7 +22,7 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             case 0:
                 return new UserFragment();
             case 2:
-                return new UserListFragment();
+                return new ScheduleFragment();
             default:
                 return new ListFragment();
         }

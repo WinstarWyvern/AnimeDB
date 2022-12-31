@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.anime_db.R;
-import com.example.anime_db.adapter.ViewPagerAdapter;
+import com.example.anime_db.adapter.MainViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class HomeActivity extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
-        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        MainViewPagerAdapter adapter = new MainViewPagerAdapter(this);
         viewPager2.setAdapter(adapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
