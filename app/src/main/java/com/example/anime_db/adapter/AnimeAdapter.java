@@ -36,24 +36,21 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         view = inflater.inflate(R.layout.item_anime, parent, false);
 
         AnimeAdapter.MyViewHolder viewHolder = new MyViewHolder(view);
-        viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(parent.getContext(), DetailAnimeActivity.class);
-                Datum animeData = new Datum();
-//                animeData = resultList.get(viewHolder.getBindingAdapterPosition());
-                animeData.setTitle(resultList.get(viewHolder.getBindingAdapterPosition()).getTitle());
-                animeData.setSynopsis(resultList.get(viewHolder.getBindingAdapterPosition()).getSynopsis());
-                animeData.setImages(resultList.get(viewHolder.getBindingAdapterPosition()).getImages());
+        viewHolder.relativeLayout.setOnClickListener(view1 -> {
+            Intent intent = new Intent(parent.getContext(), DetailAnimeActivity.class);
+            Datum animeData = new Datum();
 
-                Jpg imageData = new Jpg();
+            animeData.setTitle(resultList.get(viewHolder.getBindingAdapterPosition()).getTitle());
+            animeData.setSynopsis(resultList.get(viewHolder.getBindingAdapterPosition()).getSynopsis());
+            animeData.setImages(resultList.get(viewHolder.getBindingAdapterPosition()).getImages());
 
-                imageData.setImageUrl(animeData.getImages().getJpg().getImageUrl());
+            Jpg imageData = new Jpg();
 
-                intent.putExtra(DetailAnimeActivity.stringData, animeData);
-                intent.putExtra(DetailAnimeActivity.pictureData, imageData);
-                parent.getContext().startActivity(intent);
-            }
+            imageData.setImageUrl(animeData.getImages().getJpg().getImageUrl());
+
+            intent.putExtra(DetailAnimeActivity.stringData, animeData);
+            intent.putExtra(DetailAnimeActivity.pictureData, imageData);
+            parent.getContext().startActivity(intent);
         });
         return viewHolder;
     }
