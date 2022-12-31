@@ -21,8 +21,8 @@ import com.example.anime_db.model.anime.Jpg;
 import java.util.List;
 
 public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder> {
-    private Context context;
-    private List<Datum> resultList;
+    private final Context context;
+    private final List<Datum> resultList;
 
     public AnimeAdapter(Context context, List<Datum> resultList) {
         this.context = context;
@@ -35,7 +35,7 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         view = inflater.inflate(R.layout.item_anime, parent, false);
 
-        AnimeAdapter.MyViewHolder viewHolder = new AnimeAdapter.MyViewHolder(view);
+        AnimeAdapter.MyViewHolder viewHolder = new MyViewHolder(view);
         viewHolder.relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +70,7 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         return resultList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title, synopsis;
         ImageView poster;
         RelativeLayout relativeLayout;

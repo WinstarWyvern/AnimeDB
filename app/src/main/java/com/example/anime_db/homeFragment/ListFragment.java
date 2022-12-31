@@ -27,8 +27,7 @@ import retrofit2.Callback;
 public class ListFragment extends Fragment {
     private AnimeAdapter animeAdapter;
     private SearchView searchView;
-//    String param1 = "v4/seasons/now";
-//    int page = 1;
+
     RecyclerView recyclerView;
 
     private void CallRetrofit() {
