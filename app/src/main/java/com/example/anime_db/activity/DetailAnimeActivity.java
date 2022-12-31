@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 import com.example.anime_db.R;
-import com.example.anime_db.model.Datum;
-import com.example.anime_db.model.Jpg;
+import com.example.anime_db.model.anime.Datum;
+import com.example.anime_db.model.anime.Jpg;
 
 import android.os.Bundle;
 import android.widget.ImageView;

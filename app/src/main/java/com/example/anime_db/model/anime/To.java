@@ -1,40 +1,40 @@
-package com.example.anime_db.model;
+package com.example.anime_db.model.anime;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class From {
+public class To {
     @SerializedName("day")
     @Expose
-    private Integer day;
+    private Object day;
     @SerializedName("month")
     @Expose
-    private Integer month;
+    private Object month;
     @SerializedName("year")
     @Expose
-    private Integer year;
+    private Object year;
 
-    public Integer getDay() {
+    public Object getDay() {
         return day;
     }
 
-    public void setDay(Integer day) {
+    public void setDay(Object day) {
         this.day = day;
     }
 
-    public Integer getMonth() {
+    public Object getMonth() {
         return month;
     }
 
-    public void setMonth(Integer month) {
+    public void setMonth(Object month) {
         this.month = month;
     }
 
-    public Integer getYear() {
+    public Object getYear() {
         return year;
     }
 
-    public void setYear(Integer year) {
+    public void setYear(Object year) {
         this.year = year;
     }
 }

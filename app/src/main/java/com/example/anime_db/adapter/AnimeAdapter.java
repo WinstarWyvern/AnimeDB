@@ -15,8 +15,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.anime_db.R;
 import com.example.anime_db.activity.DetailAnimeActivity;
-import com.example.anime_db.model.Datum;
-import com.example.anime_db.model.Jpg;
+import com.example.anime_db.model.anime.Datum;
+import com.example.anime_db.model.anime.Jpg;
 
 import java.util.List;
 

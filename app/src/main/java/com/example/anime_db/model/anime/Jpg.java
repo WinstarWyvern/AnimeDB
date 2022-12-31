@@ -1,24 +1,43 @@
-package com.example.anime_db.model;
+package com.example.anime_db.model.anime;
+
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Images__1 {
+public class Jpg implements Parcelable {
     @SerializedName("image_url")
     @Expose
     private String imageUrl;
     @SerializedName("small_image_url")
     @Expose
     private String smallImageUrl;
-    @SerializedName("medium_image_url")
-    @Expose
-    private String mediumImageUrl;
     @SerializedName("large_image_url")
     @Expose
     private String largeImageUrl;
-    @SerializedName("maximum_image_url")
-    @Expose
-    private String maximumImageUrl;
+
+    public Jpg(Parcel in) {
+        imageUrl = in.readString();
+        smallImageUrl = in.readString();
+        largeImageUrl = in.readString();
+    }
+
+    public static final Creator<Jpg> CREATOR = new Creator<Jpg>() {
+        @Override
+        public Jpg createFromParcel(Parcel in) {
+            return new Jpg(in);
+        }
+
+        @Override
+        public Jpg[] newArray(int size) {
+            return new Jpg[size];
+        }
+    };
+
+    public Jpg() {
+
+    }
 
     public String getImageUrl() {
         return imageUrl;
@@ -36,14 +55,6 @@ public class Images__1 {
         this.smallImageUrl = smallImageUrl;
     }
 
-    public String getMediumImageUrl() {
-        return mediumImageUrl;
-    }
-
-    public void setMediumImageUrl(String mediumImageUrl) {
-        this.mediumImageUrl = mediumImageUrl;
-    }
-
     public String getLargeImageUrl() {
         return largeImageUrl;
     }
@@ -52,11 +63,15 @@ public class Images__1 {
         this.largeImageUrl = largeImageUrl;
     }
 
-    public String getMaximumImageUrl() {
-        return maximumImageUrl;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setMaximumImageUrl(String maximumImageUrl) {
-        this.maximumImageUrl = maximumImageUrl;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(imageUrl);
+        parcel.writeString(smallImageUrl);
+        parcel.writeString(largeImageUrl);
     }
 }

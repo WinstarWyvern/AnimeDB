@@ -13,10 +13,10 @@ import android.widget.SearchView;
 
 import com.example.anime_db.R;
 import com.example.anime_db.adapter.AnimeAdapter;
-import com.example.anime_db.model.Datum;
+import com.example.anime_db.model.anime.Datum;
 import com.example.anime_db.rest.ApiClient;
 import com.example.anime_db.rest.ApiInterface;
-import com.example.anime_db.model.Response;
+import com.example.anime_db.model.anime.Response;
 
 import java.util.List;
 
