@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,10 +62,10 @@ public class ScheduleFragment extends Fragment {
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
           this.getContext(),
                 R.array.days,
-                R.layout.schedule_spinner_text
+                R.layout.spinner_text
         );
 
-        arrayAdapter.setDropDownViewResource(R.layout.schedule_spinner_inner_text);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
         spinner.setAdapter(arrayAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
