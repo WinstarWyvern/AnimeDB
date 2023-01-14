@@ -84,28 +84,24 @@ public class UserFragment extends Fragment {
     }
 
     private void callRetrofit(String userNameData, View view){
+        RelativeLayout displayProfile = view.findViewById(R.id.layoutProfile);
+        RelativeLayout displayNoUserFound = view.findViewById(R.id.layoutNoUserFound);
+
         ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
         Call<ResponseUser> call = apiInterface.getUserProfile(userNameData);
         call.enqueue(new Callback<ResponseUser>() {
             @Override
-            public void onResponse(Call<ResponseUser> call, retrofit2.Response<ResponseUser> response) {
+            public void onResponse(Call<ResponseUser> call, Response<ResponseUser> response) {
                 DataUser dataUser = response.body().getData();
-                RelativeLayout displayProfile = view.findViewById(R.id.layoutProfile);
-                RelativeLayout displayNoUserFound = view.findViewById(R.id.layoutNoUserFound);
-                if(dataUser.getUsername().equalsIgnoreCase(userNameData)){
-                    displayProfile.setVisibility(View.VISIBLE);
-                    displayNoUserFound.setVisibility(View.GONE);
-                    setDataUser(dataUser, view);
-
-                } else{
-                    displayProfile.setVisibility(View.GONE);
-                    displayNoUserFound.setVisibility(View.VISIBLE);
-                }
+                displayProfile.setVisibility(View.VISIBLE);
+                displayNoUserFound.setVisibility(View.GONE);
+                setDataUser(dataUser, view);
             }
 
             @Override
             public void onFailure(Call<ResponseUser> call, Throwable t) {
-
+                displayProfile.setVisibility(View.GONE);
+                displayNoUserFound.setVisibility(View.VISIBLE);
             }
         });
     }
@@ -119,9 +115,5 @@ public class UserFragment extends Fragment {
         callRetrofit(userNameData, view);
 
         return view;
-    }
-
-    public void setText(){
-
     }
 }

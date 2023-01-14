@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
         Intent result = getIntent();
         String userName = result.getStringExtra("username");
 
-        Toast.makeText(getApplicationContext(),"Welcome Back " + userName, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),"Welcome " + userName, Toast.LENGTH_SHORT).show();
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);

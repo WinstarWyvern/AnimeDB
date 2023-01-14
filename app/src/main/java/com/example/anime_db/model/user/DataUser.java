@@ -23,13 +23,13 @@ public class DataUser {
     private String lastOnline;
     @SerializedName("gender")
     @Expose
-    private Object gender;
+    private String gender;
     @SerializedName("birthday")
     @Expose
-    private Object birthday;
+    private String birthday;
     @SerializedName("location")
     @Expose
-    private Object location;
+    private String location;
     @SerializedName("joined")
     @Expose
     private String joined;
@@ -44,7 +44,7 @@ public class DataUser {
     private Updates updates;
     @SerializedName("about")
     @Expose
-    private Object about;
+    private String about;
     @SerializedName("external")
     @Expose
     private List<External> external = null;
@@ -89,27 +89,27 @@ public class DataUser {
         this.lastOnline = lastOnline;
     }
 
-    public Object getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Object gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
-    public Object getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Object birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
-    public Object getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Object location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
@@ -145,11 +145,11 @@ public class DataUser {
         this.updates = updates;
     }
 
-    public Object getAbout() {
+    public String getAbout() {
         return about;
     }
 
-    public void setAbout(Object about) {
+    public void setAbout(String about) {
         this.about = about;
     }
 

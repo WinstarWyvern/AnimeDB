@@ -18,7 +18,7 @@ public interface ApiInterface {
 //            @Path(value="day", encoded = true) String day
     );
 
-    @GET("v4/users/{username}/full")
+    @GET("/v4/users/{username}/full")
     Call<ResponseUser> getUserProfile(
         @Path("username") String username
     );

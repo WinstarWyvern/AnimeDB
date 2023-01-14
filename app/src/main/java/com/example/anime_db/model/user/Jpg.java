@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
 public class Jpg {
     @SerializedName("image_url")
     @Expose
-    private Object imageUrl;
+    private String imageUrl;
 
-    public Object getImageUrl() {
+    public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(Object imageUrl) {
+    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 }

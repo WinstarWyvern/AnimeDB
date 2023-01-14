@@ -11,7 +11,7 @@ public class Updates {
     private List<AnimeUpdate> anime = null;
     @SerializedName("manga")
     @Expose
-    private List<Object> manga = null;
+    private List<MangaUpdate> manga = null;
 
     public List<AnimeUpdate> getAnime() {
         return anime;
@@ -21,11 +21,11 @@ public class Updates {
         this.anime = anime;
     }
 
-    public List<Object> getManga() {
+    public List<MangaUpdate> getManga() {
         return manga;
     }
 
-    public void setManga(List<Object> manga) {
+    public void setManga(List<MangaUpdate> manga) {
         this.manga = manga;
     }
 }

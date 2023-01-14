@@ -3,31 +3,31 @@ package com.example.anime_db.model.user;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class AnimeUpdate {
+public class MangaUpdate {
     @SerializedName("entry")
     @Expose
-    private EntryAnime entry;
+    private EntryManga entry;
     @SerializedName("score")
     @Expose
     private Integer score;
     @SerializedName("status")
     @Expose
     private String status;
-    @SerializedName("episodes_seen")
+    @SerializedName("chapters_read")
     @Expose
-    private Integer episodesSeen;
-    @SerializedName("episodes_total")
+    private Integer chaptersRead;
+    @SerializedName("chapters_total")
     @Expose
-    private Integer episodesTotal;
+    private Integer chaptersTotal;
     @SerializedName("date")
     @Expose
     private String date;
 
-    public EntryAnime getEntry() {
+    public EntryManga getEntry() {
         return entry;
     }
 
-    public void setEntry(EntryAnime entry) {
+    public void setEntry(EntryManga entry) {
         this.entry = entry;
     }
 
@@ -47,20 +47,20 @@ public class AnimeUpdate {
         this.status = status;
     }
 
-    public Integer getEpisodesSeen() {
-        return episodesSeen;
+    public Integer getChaptersRead() {
+        return chaptersRead;
     }
 
-    public void setEpisodesSeen(Integer episodesSeen) {
-        this.episodesSeen = episodesSeen;
+    public void setChaptersRead(Integer chaptersRead) {
+        this.chaptersRead = chaptersRead;
     }
 
-    public Integer getEpisodesTotal() {
-        return episodesTotal;
+    public Integer getChaptersTotal() {
+        return chaptersTotal;
     }
 
-    public void setEpisodesTotal(Integer episodesTotal) {
-        this.episodesTotal = episodesTotal;
+    public void setChaptersTotal(Integer chaptersTotal) {
+        this.chaptersTotal = chaptersTotal;
     }
 
     public String getDate() {

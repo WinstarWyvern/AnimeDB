@@ -6,10 +6,10 @@ import com.google.gson.annotations.SerializedName;
 public class MangaStat {
     @SerializedName("days_read")
     @Expose
-    private Integer daysRead;
+    private Double daysRead;
     @SerializedName("mean_score")
     @Expose
-    private Integer meanScore;
+    private Double meanScore;
     @SerializedName("reading")
     @Expose
     private Integer reading;
@@ -38,19 +38,19 @@ public class MangaStat {
     @Expose
     private Integer volumesRead;
 
-    public Integer getDaysRead() {
+    public Double getDaysRead() {
         return daysRead;
     }
 
-    public void setDaysRead(Integer daysRead) {
+    public void setDaysRead(Double daysRead) {
         this.daysRead = daysRead;
     }
 
-    public Integer getMeanScore() {
+    public Double getMeanScore() {
         return meanScore;
     }
 
-    public void setMeanScore(Integer meanScore) {
+    public void setMeanScore(Double meanScore) {
         this.meanScore = meanScore;
     }
 

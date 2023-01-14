@@ -11,7 +11,7 @@ public class Favorite {
     private List<AnimeFav> anime = null;
     @SerializedName("manga")
     @Expose
-    private List<Object> manga = null;
+    private List<MangaFav> manga = null;
     @SerializedName("characters")
     @Expose
     private List<CharacterFav> characters = null;
@@ -27,11 +27,11 @@ public class Favorite {
         this.anime = anime;
     }
 
-    public List<Object> getManga() {
+    public List<MangaFav> getManga() {
         return manga;
     }
 
-    public void setManga(List<Object> manga) {
+    public void setManga(List<MangaFav> manga) {
         this.manga = manga;
     }
 

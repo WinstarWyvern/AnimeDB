@@ -3,7 +3,7 @@ package com.example.anime_db.model.user;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Entry {
+public class EntryManga {
     @SerializedName("mal_id")
     @Expose
     private Integer malId;
@@ -12,7 +12,7 @@ public class Entry {
     private String url;
     @SerializedName("images")
     @Expose
-    private ImageEntry images;
+    private ImageMangaUpdate images;
     @SerializedName("title")
     @Expose
     private String title;
@@ -33,11 +33,11 @@ public class Entry {
         this.url = url;
     }
 
-    public ImageEntry getImages() {
+    public ImageMangaUpdate getImages() {
         return images;
     }
 
-    public void setImages(ImageEntry images) {
+    public void setImages(ImageMangaUpdate images) {
         this.images = images;
     }
 
