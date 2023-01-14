@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.example.anime_db.R;
-import com.example.anime_db.activity.HomeActivity;
+import com.example.anime_db.homeFragment.UserFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         if(name.equals("")){
             name = "Guest";
         }
+
         toHome.putExtra("username",name);
         startActivity(toHome);
     }
