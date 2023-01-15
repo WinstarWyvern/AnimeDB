@@ -54,8 +54,8 @@ public class DetailAnimeActivity extends AppCompatActivity {
         favoriteDetail = findViewById(R.id.favoriteDetailAnime);
         yearDetail = findViewById(R.id.yearDetailAnime);
 //        genreView = findViewById(R.id.genreDetailAnime);
-//        englishTitleView = findViewById(R.id.)
-//        japanTitleView = findViewById(R.id.)
+        englishTitleView = findViewById(R.id.englishTitleDetailAnime);
+        japanTitleView = findViewById(R.id.japanTitleDetailAnime);
 
 
         animeData = getIntent().getParcelableExtra(stringData);
