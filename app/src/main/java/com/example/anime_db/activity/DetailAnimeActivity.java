@@ -10,6 +10,7 @@ import com.example.anime_db.model.anime.Jpg;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -21,15 +22,15 @@ public class DetailAnimeActivity extends AppCompatActivity {
     String title, synopsis, imagePath;
     String format, duration, status, startdate,
             enddate, season, producername, studiosname, episodeString, popularityString, membersString, favoriteString, yearString,
-    scoreString;
+    scoreString, genreString, ctr, englishTitle, japanTitle;
     List<Genre> genre;
-    Integer episode, popularity, members, favorite, year;
+    Integer episode, popularity, members, favorite, year,genreSize;
     Double score;
     ImageView imgDetail;
     TextView titleDetail, synopsisDetail;
     TextView formatDetail, durationDetail, statusDetail, startdateDetail,
             enddateDetail, seasonDetail, studiosnameDetail, episodeDetail, popularityDetail, membersDetail,
-            favoriteDetail, yearDetail, scoreDetail;
+            favoriteDetail, yearDetail, scoreDetail, genreView, englishTitleView, japanTitleView;
     Datum animeData;
     Jpg imageData;
 
@@ -52,6 +53,9 @@ public class DetailAnimeActivity extends AppCompatActivity {
         membersDetail = findViewById(R.id.membersDetailAnime);
         favoriteDetail = findViewById(R.id.favoriteDetailAnime);
         yearDetail = findViewById(R.id.yearDetailAnime);
+//        genreView = findViewById(R.id.genreDetailAnime);
+//        englishTitleView = findViewById(R.id.)
+//        japanTitleView = findViewById(R.id.)
 
 
         animeData = getIntent().getParcelableExtra(stringData);
@@ -74,7 +78,16 @@ public class DetailAnimeActivity extends AppCompatActivity {
         favoriteString = favorite.toString();
         year = animeData.getYear();
         yearString = year.toString();
-        genre = animeData.getGenres();
+//        genreString = animeData.getGenres().get(0).getName();
+//        genreString = null;
+//            genreSize = animeData.getGenres().size();
+//        for (int i=0;i<genreSize;i++){
+//            ctr = genre.get(i).getName();
+//            genreString = genreString.concat(", ");
+//            genreString = genreString.concat(ctr);
+//        }
+        englishTitle = animeData.getTitleEnglish();
+        japanTitle = animeData.getTitleJapanese();
 
 
         imageData = getIntent().getParcelableExtra(pictureData);
@@ -93,6 +106,11 @@ public class DetailAnimeActivity extends AppCompatActivity {
         membersDetail.setText(membersString);
         favoriteDetail.setText(favoriteString);
         yearDetail.setText(yearString);
+//        genreView.setText(genreString);
+        englishTitleView.setText(englishTitle);
+        japanTitleView.setText(japanTitle);
+
+
 
         Glide.with(getApplicationContext()).load(imagePath).into(imgDetail);
     }

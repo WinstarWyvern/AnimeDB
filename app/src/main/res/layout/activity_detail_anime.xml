@@ -21,6 +21,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="fitXY"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -49,6 +50,56 @@
         app:layout_constraintTop_toBottomOf="@+id/titleDetailAnime" />
 
     <TextView
+        android:id="@+id/englishTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="English Title : "
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/synopsisDetailAnime" />
+    <TextView
+        android:id="@+id/englishTitleDetailAnime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="ini Favorite"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toEndOf="@+id/englishTitleText"
+        app:layout_constraintTop_toBottomOf="@+id/synopsisDetailAnime" />
+
+    <TextView
+        android:id="@+id/japanTitleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Japan Title : "
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/englishTitleDetailAnime" />
+
+    <TextView
+        android:id="@+id/japanTitleDetailAnime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ini Japanese Title"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toEndOf="@+id/formatText"
+        app:layout_constraintTop_toBottomOf="@+id/englishTitleDetailAnime" />
+
+    <TextView
         android:id="@+id/formatText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +110,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/synopsisDetailAnime" />
+        app:layout_constraintTop_toBottomOf="@+id/englishTitleDetailAnime" />
 
     <TextView
         android:id="@+id/FormatDetailAnime"
@@ -69,9 +120,10 @@
         android:text="ini Format"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
+
         app:layout_constraintStart_toEndOf="@+id/formatText"
-        app:layout_constraintTop_toBottomOf="@+id/synopsisDetailAnime" />
+        app:layout_constraintTop_toBottomOf="@+id/englishTitleDetailAnime" />
 
     <TextView
         android:id="@+id/DurationText"
@@ -95,7 +147,7 @@
         android:text="Ini Duration"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/DurationText"
         app:layout_constraintTop_toBottomOf="@+id/FormatDetailAnime" />
 
@@ -121,7 +173,7 @@
         android:text="Ini Episode"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/episodeText"
         app:layout_constraintTop_toBottomOf="@+id/DurationDetailAnime" />
 
@@ -147,7 +199,7 @@
         android:text="ini Status"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/statusText"
         app:layout_constraintTop_toBottomOf="@+id/episodeDetailAnime" />
 
@@ -197,7 +249,7 @@
         android:text="ini Season"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/seasonText"
         app:layout_constraintTop_toBottomOf="@+id/statusDetailAnime" />
 
@@ -222,7 +274,7 @@
         android:text="ini Year"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/yearText"
         app:layout_constraintTop_toBottomOf="@+id/seasonDetailAnime" />
 
@@ -247,7 +299,7 @@
         android:text="ini Score"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/scoreText"
         app:layout_constraintTop_toBottomOf="@+id/yearDetailAnime" />
 
@@ -256,7 +308,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Populatiry : "
+        android:text="Popularity : "
         android:textStyle="bold"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -272,7 +324,7 @@
         android:text="ini Popularity"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/popularityText"
         app:layout_constraintTop_toBottomOf="@+id/scoreDetailAnime" />
 
@@ -297,22 +349,22 @@
         android:text="ini Members"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/membersText"
         app:layout_constraintTop_toBottomOf="@+id/popularityDetailAnime" />
 
     <TextView
-        android:id="@+id/favoriteText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="Favorite : "
-        android:textStyle="bold"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/membersText" />
+    android:id="@+id/favoriteText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:text="Favorite : "
+    android:textStyle="bold"
+    android:textSize="16sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/membersText" />
     <TextView
         android:id="@+id/favoriteDetailAnime"
         android:layout_width="wrap_content"
@@ -322,21 +374,23 @@
         android:text="ini Favorite"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toEndOf="@+id/favoriteText"
         app:layout_constraintTop_toBottomOf="@+id/membersDetailAnime" />
+
 
 <!--    <TextView-->
 <!--        android:id="@+id/genreText"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->
 <!--        android:layout_marginTop="20dp"-->
+<!--        android:textStyle="bold"-->
 <!--        android:text="Genre : "-->
 <!--        android:textSize="16sp"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintHorizontal_bias="0.1"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/FormatDetailAnime" />-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/favoriteDetailAnime" />-->
 <!--    <TextView-->
 <!--        android:id="@+id/genreDetailAnime"-->
 <!--        android:layout_width="wrap_content"-->
@@ -346,9 +400,9 @@
 <!--        android:text="ini Genre"-->
 <!--        android:textSize="16sp"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.05"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/episodeText"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/formatText" />-->
+<!--        app:layout_constraintHorizontal_bias="0.15"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/genreText"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/favoriteDetailAnime" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
