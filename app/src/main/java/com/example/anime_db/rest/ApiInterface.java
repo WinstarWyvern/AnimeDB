@@ -12,7 +12,7 @@ public interface ApiInterface {
     Call<Response> getAnime(
     );
 
-    @GET("/v4/schedules/{animeName}")
+    @GET("/v4/schedules/")
     Call<Response> getSchedules(
             @Query("filter") String filter
 //            @Path(value="day", encoded = true) String day
