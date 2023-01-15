@@ -30,6 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
         MainViewPagerAdapter adapter = new MainViewPagerAdapter(this, userName);
         viewPager2.setAdapter(adapter);
+        viewPager2.setCurrentItem(0);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

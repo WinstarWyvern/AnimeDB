@@ -10,7 +10,7 @@ import com.example.anime_db.homeFragment.UserFragment;
 import com.example.anime_db.homeFragment.ScheduleFragment;
 
 public class MainViewPagerAdapter extends FragmentStateAdapter {
-    private String userName;
+    private final String userName;
 
     public MainViewPagerAdapter(@NonNull FragmentActivity fragmentActivity, String userName) {
         super(fragmentActivity);
@@ -21,7 +21,7 @@ public class MainViewPagerAdapter extends FragmentStateAdapter {
     @Override
     public Fragment createFragment(int position) {
         switch (position){
-            case 0:
+            case 1:
                 return new UserFragment(this.userName);
             case 2:
                 return new ScheduleFragment();
