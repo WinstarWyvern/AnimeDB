@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
-        MainViewPagerAdapter adapter = new MainViewPagerAdapter(this);
+        MainViewPagerAdapter adapter = new MainViewPagerAdapter(this, msg);
         viewPager2.setAdapter(adapter);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
