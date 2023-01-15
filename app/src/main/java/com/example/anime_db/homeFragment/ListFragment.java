@@ -1,273 +1,3 @@
-//package com.example.anime_db.homeFragment;
-//
-//import android.os.Bundle;
-//
-//import androidx.annotation.Nullable;
-//import androidx.appcompat.app.AppCompatActivity;
-//import androidx.fragment.app.Fragment;
-//import androidx.recyclerview.widget.LinearLayoutManager;
-//import androidx.recyclerview.widget.RecyclerView;
-//
-//import android.os.PersistableBundle;
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.SearchView;
-//
-//import com.example.anime_db.R;
-//import com.example.anime_db.adapter.AnimeAdapter;
-//import com.example.anime_db.model.anime.Datum;
-//import com.example.anime_db.rest.ApiClient;
-//import com.example.anime_db.rest.ApiInterface;
-//import com.example.anime_db.model.anime.Response;
-//
-//import java.util.List;
-//
-//import retrofit2.Call;
-//import retrofit2.Callback;
-//
-//
-//public class ListFragment extends AppCompatActivity {
-//    private AnimeAdapter animeAdapter;
-//    private SearchView searchview;
-//
-//    RecyclerView recyclerView;
-//
-//    @Override
-//    public void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_list);
-//
-//        recyclerView = findViewById(R.id.rvAnime);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//        CallRetrofit();
-//    }
-//
-//    private void CallRetrofit() {
-//        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-//        Call<Response> call = apiInterface.getAnime();
-//        call.enqueue(new Callback<Response>() {
-//            @Override
-//            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-//                List<Datum> datumList = response.body().getData();
-//                animeAdapter = new AnimeAdapter(ListFragment.this, datumList);
-//                recyclerView.setAdapter(animeAdapter);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Response> call, Throwable t) {
-//
-//            }
-//        });
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//
-//        // Inflate the layout for this fragment
-//        View view = inflater.inflate(R.layout.fragment_list, container, false);
-//
-//                searchview = (SearchView) view.findViewById(R.id.searchView);
-//        searchview.clearFocus();
-//        searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String s) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String textSearch) {
-//                if (textSearch.length() > 1){
-//                    ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-//                    Call<Response> call = apiInterface.getSearch(textSearch);
-//                    call.enqueue(new Callback<Response>() {
-//                        @Override
-//                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-//                            List<Datum> datumList = response.body().getData();
-//                            animeAdapter = new AnimeAdapter(getContext(), datumList);
-//                            recyclerView.setAdapter(animeAdapter);
-//                        }
-//
-//                        @Override
-//                        public void onFailure(Call<Response> call, Throwable t) {
-//
-//                        }
-//                    });
-//                }
-//                return true;
-//            }
-//        });
-//
-//
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-//
-//        CallRetrofit();
-//
-//        return view;
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//package com.example.anime_db.homeFragment;
-//
-//import android.os.Bundle;
-//
-//import androidx.fragment.app.Fragment;
-//import androidx.recyclerview.widget.LinearLayoutManager;
-//import androidx.recyclerview.widget.RecyclerView;
-//
-//import android.view.LayoutInflater;
-//import android.view.View;
-//import android.view.ViewGroup;
-//import android.widget.SearchView;
-//
-//import com.example.anime_db.R;
-//import com.example.anime_db.adapter.AnimeAdapter;
-//import com.example.anime_db.model.anime.Datum;
-//import com.example.anime_db.rest.ApiClient;
-//import com.example.anime_db.rest.ApiInterface;
-//import com.example.anime_db.model.anime.Response;
-//
-//import java.util.List;
-//
-//import retrofit2.Call;
-//import retrofit2.Callback;
-//
-//
-//public class ListFragment extends Fragment {
-//    private AnimeAdapter animeAdapter;
-//    private SearchView searchview;
-//
-//    RecyclerView recyclerView;
-//
-//    private void CallRetrofit() {
-//        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-//        Call<Response> call = apiInterface.getAnime();
-//        call.enqueue(new Callback<Response>() {
-//            @Override
-//            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-//                List<Datum> datumList = response.body().getData();
-//                animeAdapter = new AnimeAdapter(getContext(), datumList);
-//                recyclerView.setAdapter(animeAdapter);
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Response> call, Throwable t) {
-//
-//            }
-//        });
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//
-//        // Inflate the layout for this fragment
-//        View view = inflater.inflate(R.layout.fragment_list, container, false);
-//
-////                searchview = (SearchView) view.findViewById(R.id.searchView);
-////        searchview.clearFocus();
-////        searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-////            @Override
-////            public boolean onQueryTextSubmit(String s) {
-////                return false;
-////            }
-////
-////            @Override
-////            public boolean onQueryTextChange(String textSearch) {
-////                if (textSearch.length() > 1){
-////                    ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
-////                    Call<Response> call = apiInterface.getSearch(textSearch);
-////                    call.enqueue(new Callback<Response>() {
-////                        @Override
-////                        public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-////                            List<Datum> datumList = response.body().getData();
-////                            animeAdapter = new AnimeAdapter(getContext(), datumList);
-////                            recyclerView.setAdapter(animeAdapter);
-////                        }
-////
-////                        @Override
-////                        public void onFailure(Call<Response> call, Throwable t) {
-////
-////                        }
-////                    });
-////                }
-////                return true;
-////            }
-////        });
-//
-//        recyclerView = view.findViewById(R.id.rvAnime);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-//
-//        CallRetrofit();
-//
-//        return view;
-//    }
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 package com.example.anime_db.homeFragment;
 
 import android.os.Bundle;
@@ -336,13 +66,13 @@ public class ListFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_list, container, false);
 
-        spinnerSeason = view.findViewById(R.id.spinner_season);
+        spinnerSeason = view.findViewById(R.id.spinner_seasons);
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
                 this.getContext(),
                 R.array.seasons,
-                R.layout.spinner_season_text
+                R.layout.spinner_text
         );
-        arrayAdapter.setDropDownViewResource(R.layout.spinner_season);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_inner_text);
         spinnerSeason.setAdapter(arrayAdapter);
         spinnerSeason.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -363,15 +93,16 @@ public class ListFragment extends Fragment {
         ArrayAdapter<CharSequence> arrayAdapter2 = ArrayAdapter.createFromResource(
                 this.getContext(),
                 R.array.year,
-                R.layout.spinner_year_text
+                R.layout.spinner_text
         );
-        arrayAdapter2.setDropDownViewResource(R.layout.spinner_year);
+        arrayAdapter2.setDropDownViewResource(R.layout.spinner_inner_text);
         spinnerYear.setAdapter(arrayAdapter2);
 
         spinnerYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 year = adapterView.getSelectedItem().toString();
+                CallRetrofit();
             }
 
             @Override
