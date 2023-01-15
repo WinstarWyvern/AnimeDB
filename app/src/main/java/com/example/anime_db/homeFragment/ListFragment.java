@@ -79,7 +79,7 @@ public class ListFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 season = adapterView.getSelectedItem().toString();
                 CallRetrofit();
-                Toast.makeText(getContext(),"This is " + season +"'s Schedule", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(),"This is " + season + " " + year +"'s Schedule", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -103,6 +103,7 @@ public class ListFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 year = adapterView.getSelectedItem().toString();
                 CallRetrofit();
+                Toast.makeText(getContext(),"This is " + season + " " + year +"'s Schedule", Toast.LENGTH_SHORT).show();
             }
 
             @Override
