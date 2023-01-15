@@ -5,11 +5,412 @@
     android:layout_height="match_parent"
     tools:context=".homeFragment.UserFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/layoutLoading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Welcome to user"
-        android:gravity="center" />
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:text="Please Wait"
+            android:textColor="@color/material_dynamic_neutral80"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutNoUserFound"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"
+            android:text="No User found"
+            android:textColor="@color/material_dynamic_neutral80"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layoutProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Profile"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="50dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/titleLine"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_below="@id/title"
+            android:background="@color/material_dynamic_neutral70" />
+
+        <RelativeLayout
+            android:id="@+id/profileImgName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titleLine"
+            android:layout_marginTop="15dp" >
+
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:src="@color/purple_500"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:id="@+id/nameUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imgUser"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/joined"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameUser"
+                android:layout_toRightOf="@+id/imgUser"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:text=""
+                android:textColor="@color/material_dynamic_neutral50"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/lastOnline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profileImgName"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/lastOnlineTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Last Online: "
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+            <TextView
+                android:id="@+id/lastOnlineContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/lastOnlineTitle"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/userStat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lastOnline"
+            android:layout_marginTop="15dp" >
+
+            <TextView
+                android:id="@+id/statisticsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Statistics"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/daysWatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/statisticsTitle"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/daysWatchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Days Watched: "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/daysWatchContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/daysWatchTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/meanScore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/daysWatch"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/meanScoreTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Mean Score    : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/meanScoreContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/meanScoreTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/watching"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/meanScore"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/watchingTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Watching         : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/watchingContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/watchingTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/complete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/watching"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/completeTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Complete         : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/completeContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/completeTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/onHold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/complete"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/onHoldTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="On Hold            : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/onHoldContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/onHoldTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dropped"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/onHold"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/droppedTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dropped           : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/droppedContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/droppedTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/planToWatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dropped"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/planToWatchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Plan To Watch : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/planToWatchContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/planToWatchTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/totalEntries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/planToWatch"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/totalEntriesTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Total Entries     : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/totalEntriesContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/totalEntriesTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rewatched"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/totalEntries"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/rewatchedTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Rewatch            : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/rewatchedContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/rewatchedTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/episodeWatch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rewatched"
+                android:layout_marginTop="10dp" >
+
+                <TextView
+                    android:id="@+id/episodeWatchTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Episode Watch : "
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/episodeWatchContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/episodeWatchTitle"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
 
 </FrameLayout>
