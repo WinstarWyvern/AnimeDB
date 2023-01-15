@@ -36,6 +36,7 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         view = inflater.inflate(R.layout.item_anime, parent, false);
 
         AnimeAdapter.MyViewHolder viewHolder = new MyViewHolder(view);
+
         viewHolder.relativeLayout.setOnClickListener(view1 -> {
             Intent intent = new Intent(parent.getContext(), DetailAnimeActivity.class);
             Datum animeData = new Datum();
@@ -52,6 +53,7 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
             intent.putExtra(DetailAnimeActivity.pictureData, imageData);
             parent.getContext().startActivity(intent);
         });
+
         return viewHolder;
     }
 
