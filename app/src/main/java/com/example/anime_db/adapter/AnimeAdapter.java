@@ -36,7 +36,6 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         view = inflater.inflate(R.layout.item_anime, parent, false);
 
         AnimeAdapter.MyViewHolder viewHolder = new MyViewHolder(view);
-
         viewHolder.relativeLayout.setOnClickListener(view1 -> {
             Intent intent = new Intent(parent.getContext(), DetailAnimeActivity.class);
             Datum animeData = new Datum();
@@ -44,16 +43,28 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
             animeData.setTitle(resultList.get(viewHolder.getBindingAdapterPosition()).getTitle());
             animeData.setSynopsis(resultList.get(viewHolder.getBindingAdapterPosition()).getSynopsis());
             animeData.setImages(resultList.get(viewHolder.getBindingAdapterPosition()).getImages());
-
+            animeData.setType(resultList.get(viewHolder.getBindingAdapterPosition()).getType());
+            animeData.setEpisodes(resultList.get(viewHolder.getBindingAdapterPosition()).getEpisodes());
+            animeData.setDuration(resultList.get(viewHolder.getBindingAdapterPosition()).getDuration());
+            animeData.setStatus(resultList.get(viewHolder.getBindingAdapterPosition()).getStatus());
+            animeData.setSeason(resultList.get(viewHolder.getBindingAdapterPosition()).getSeason());
+            animeData.setScore(resultList.get(viewHolder.getBindingAdapterPosition()).getScore());
+            animeData.setPopularity(resultList.get(viewHolder.getBindingAdapterPosition()).getPopularity());
+            animeData.setMembers(resultList.get(viewHolder.getBindingAdapterPosition()).getMembers());
+            animeData.setFavorites(resultList.get(viewHolder.getBindingAdapterPosition()).getFavorites());
+            animeData.setYear(resultList.get(viewHolder.getBindingAdapterPosition()).getYear());
             Jpg imageData = new Jpg();
 
             imageData.setImageUrl(animeData.getImages().getJpg().getImageUrl());
+
+
+
+
 
             intent.putExtra(DetailAnimeActivity.stringData, animeData);
             intent.putExtra(DetailAnimeActivity.pictureData, imageData);
             parent.getContext().startActivity(intent);
         });
-
         return viewHolder;
     }
 
@@ -62,6 +73,14 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
         holder.title.setText(resultList.get(position).getTitle());
         holder.synopsis.setText(resultList.get(position).getSynopsis());
         Glide.with(context).load(resultList.get(position).getImages().getJpg().getImageUrl()).into(holder.poster);
+//        holder.format.setText(resultList.get(position).getType());
+//        holder.duration.setText(resultList.get(position).getDuration());
+//        holder.episode.setText(resultList.get(position).getEpisodes());
+//        holder.status.setText(resultList.get(position).getStatus());
+//        holder.season.setText(resultList.get(position).getStatus());
+//        holder.popularity.setText(resultList.get(position).getMembers());
+//        holder.favorite.setText(resultList.get(position).getFavorites());
+//        holder.year.setText(resultList.get(position).getYear());
     }
 
     @Override
@@ -71,6 +90,8 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView title, synopsis;
+        TextView format, duration, status, startdate,
+                enddate, season, producername, studiosname, episode, popularity, members, favorite, year;
         ImageView poster;
         RelativeLayout relativeLayout;
         public MyViewHolder(@NonNull View itemView) {
@@ -79,6 +100,7 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
             title = itemView.findViewById(R.id.titleAnime);
             synopsis = itemView.findViewById(R.id.synopsisAnime);
             relativeLayout = itemView.findViewById(R.id.layoutSingleAnime);
+
         }
     }
 }

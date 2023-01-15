@@ -39,9 +39,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvScheduleAnime"
         android:layout_width="match_parent"
-        android:layout_marginTop="?attr/actionBarSize"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_anime"
-        />
+        android:layout_marginTop="?attr/actionBarSize"
+        tools:listitem="@layout/item_anime" />
 
 </FrameLayout>
