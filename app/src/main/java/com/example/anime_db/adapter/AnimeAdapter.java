@@ -53,6 +53,10 @@ public class AnimeAdapter extends RecyclerView.Adapter<AnimeAdapter.MyViewHolder
             animeData.setMembers(resultList.get(viewHolder.getBindingAdapterPosition()).getMembers());
             animeData.setFavorites(resultList.get(viewHolder.getBindingAdapterPosition()).getFavorites());
             animeData.setYear(resultList.get(viewHolder.getBindingAdapterPosition()).getYear());
+//            animeData.setGenres(resultList.get(viewHolder.getBindingAdapterPosition()).getGenres());
+            animeData.setTitleEnglish(resultList.get(viewHolder.getBindingAdapterPosition()).getTitleEnglish());
+            animeData.setTitleJapanese(resultList.get(viewHolder.getBindingAdapterPosition()).getTitleJapanese());
+
             Jpg imageData = new Jpg();
 
             imageData.setImageUrl(animeData.getImages().getJpg().getImageUrl());
