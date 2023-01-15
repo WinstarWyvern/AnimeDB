@@ -20,7 +20,24 @@ public class UserAdapter {
         this.view = view;
     }
 
-    public void showImageUser(){
+    public void showDataUser(){
+        showImageUser();
+        showUserName();
+        showJoined();
+        showLastOnline();
+        showDaysWatch();
+        showMeanScore();
+        showWatching();
+        showComplete();
+        showOnHold();
+        showDropped();
+        showPlanToWatch();
+        showTotalEntries();
+        showRewatched();
+        showEpisodeWatch();
+    }
+
+    private void showImageUser(){
         ImageView imageUser = view.findViewById(R.id.imgUser);
 
         Jpg imageUserJpg = new Jpg();
@@ -29,7 +46,7 @@ public class UserAdapter {
         Glide.with(context).load(imageUserJpg.getImageUrl()).into(imageUser);
     }
 
-    public void showUserName(){
+    private void showUserName(){
         TextView userName = view.findViewById(R.id.nameUser);
 
         String userNameStr = dataUser.getUsername();
@@ -37,7 +54,7 @@ public class UserAdapter {
         userName.setText(userNameStr);
     }
 
-    public void showJoined(){
+    private void showJoined(){
         TextView joined = view.findViewById(R.id.joined);
 
         String joinedStr = dataUser.getJoined();
@@ -47,7 +64,7 @@ public class UserAdapter {
         joined.setText(date);
     }
 
-    public void showLastOnline(){
+    private void showLastOnline(){
         TextView lastOnline = view.findViewById(R.id.lastOnlineContent);
 
         String lastOnlineStr = dataUser.getLastOnline();
@@ -57,7 +74,7 @@ public class UserAdapter {
         lastOnline.setText(date);
     }
 
-    public void showDaysWatch(){
+    private void showDaysWatch(){
         TextView daysWatch = view.findViewById(R.id.daysWatchContent);
 
         String daysWatchStr = String.valueOf(dataUser.getStatistics().getAnime().getDaysWatched());
@@ -65,23 +82,23 @@ public class UserAdapter {
         daysWatch.setText(daysWatchStr + " days");
     }
 
-    public void showMeanScore(){
+    private void showMeanScore(){
         TextView meanScore = view.findViewById(R.id.meanScoreContent);
 
-        String meanScoreStr = String.valueOf(dataUser.getStatistics().getAnime().getDaysWatched());
+        String meanScoreStr = String.valueOf(dataUser.getStatistics().getAnime().getMeanScore());
 
         meanScore.setText(meanScoreStr);
     }
 
-    public void showWatching(){
+    private void showWatching(){
         TextView watching = view.findViewById(R.id.watchingContent);
 
-        String watchingStr = String.valueOf(dataUser.getStatistics().getAnime().getDaysWatched());
+        String watchingStr = String.valueOf(dataUser.getStatistics().getAnime().getWatching());
 
         watching.setText(watchingStr + " anime");
     }
 
-    public void showComplete(){
+    private void showComplete(){
         TextView complete = view.findViewById(R.id.completeContent);
 
         String completeStr = String.valueOf(dataUser.getStatistics().getAnime().getCompleted());
@@ -89,7 +106,7 @@ public class UserAdapter {
         complete.setText(completeStr + " anime");
     }
 
-    public void showOnHold(){
+    private void showOnHold(){
         TextView onHold = view.findViewById(R.id.onHoldContent);
 
         String onHoldStr = String.valueOf(dataUser.getStatistics().getAnime().getOnHold());
@@ -97,7 +114,7 @@ public class UserAdapter {
         onHold.setText(onHoldStr + " anime");
     }
 
-    public void showDropped(){
+    private void showDropped(){
         TextView dropped = view.findViewById(R.id.droppedContent);
 
         String droppedStr = String.valueOf(dataUser.getStatistics().getAnime().getDropped());
@@ -105,7 +122,7 @@ public class UserAdapter {
         dropped.setText(droppedStr + " anime");
     }
 
-    public void showPlanToWatch(){
+    private void showPlanToWatch(){
         TextView planToWatch = view.findViewById(R.id.planToWatchContent);
 
         String planToWatchStr = String.valueOf(dataUser.getStatistics().getAnime().getPlanToWatch());
@@ -113,7 +130,7 @@ public class UserAdapter {
         planToWatch.setText(planToWatchStr + " anime");
     }
 
-    public void showTotalEntries(){
+    private void showTotalEntries(){
         TextView totalEntries = view.findViewById(R.id.totalEntriesContent);
 
         String totalEntriesStr = String.valueOf(dataUser.getStatistics().getAnime().getTotalEntries());
@@ -121,7 +138,7 @@ public class UserAdapter {
         totalEntries.setText(totalEntriesStr + " anime");
     }
 
-    public void showRewatched(){
+    private void showRewatched(){
         TextView rewatched = view.findViewById(R.id.rewatchedContent);
 
         String rewatchedStr = String.valueOf(dataUser.getStatistics().getAnime().getRewatched());
@@ -129,7 +146,7 @@ public class UserAdapter {
         rewatched.setText(rewatchedStr + " episode");
     }
 
-    public void showEpisodeWatch(){
+    private void showEpisodeWatch(){
         TextView episodeWatch = view.findViewById(R.id.episodeWatchContent);
 
         String episodeWatchStr = String.valueOf(dataUser.getStatistics().getAnime().getEpisodesWatched());

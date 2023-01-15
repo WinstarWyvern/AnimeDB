@@ -30,20 +30,7 @@ public class UserFragment extends Fragment {
 
     private void setDataUser(DataUser dataUser, View view){
         UserAdapter userAdapter = new UserAdapter(getContext(), dataUser, view);
-        userAdapter.showImageUser();
-        userAdapter.showUserName();
-        userAdapter.showJoined();
-        userAdapter.showLastOnline();
-        userAdapter.showDaysWatch();
-        userAdapter.showMeanScore();
-        userAdapter.showWatching();
-        userAdapter.showComplete();
-        userAdapter.showOnHold();
-        userAdapter.showDropped();
-        userAdapter.showPlanToWatch();
-        userAdapter.showTotalEntries();
-        userAdapter.showRewatched();
-        userAdapter.showEpisodeWatch();
+        userAdapter.showDataUser();
     }
 
     private void callRetrofit(String userNameData, View view){
