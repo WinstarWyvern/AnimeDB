@@ -31,6 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tabLayout);
         ViewPager2 viewPager2 = findViewById(R.id.viewPager);
+
         MainViewPagerAdapter adapter = new MainViewPagerAdapter(this, userName);
         viewPager2.setAdapter(adapter);
         viewPager2.setCurrentItem(0);

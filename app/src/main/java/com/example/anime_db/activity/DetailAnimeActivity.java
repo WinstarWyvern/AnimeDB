@@ -17,7 +17,6 @@ import java.util.List;
 
 public class DetailAnimeActivity extends AppCompatActivity {
     public static final String stringData = "stringData";
-    public static final Integer integerData = null;
     public static final String pictureData = "pictureData";
     String title, synopsis, imagePath;
     String format, duration, status, startdate,
@@ -46,16 +45,14 @@ public class DetailAnimeActivity extends AppCompatActivity {
         durationDetail = findViewById(R.id.DurationDetailAnime);
         episodeDetail = findViewById(R.id.episodeDetailAnime);
         statusDetail = findViewById(R.id.statusDetailAnime);
-//        startdateDetail = findViewById(R.id.startdateDetailAnime);
         seasonDetail = findViewById(R.id.seasonDetailAnime);
         scoreDetail = findViewById(R.id.scoreDetailAnime);
         popularityDetail = findViewById(R.id.popularityDetailAnime);
         membersDetail = findViewById(R.id.membersDetailAnime);
         favoriteDetail = findViewById(R.id.favoriteDetailAnime);
         yearDetail = findViewById(R.id.yearDetailAnime);
-//        genreView = findViewById(R.id.genreDetailAnime);
-//        englishTitleView = findViewById(R.id.)
-//        japanTitleView = findViewById(R.id.)
+        englishTitleView = findViewById(R.id.englishTitleDetailAnime);
+        japanTitleView = findViewById(R.id.japanTitleDetailAnime);
 
 
         animeData = getIntent().getParcelableExtra(stringData);
@@ -63,29 +60,26 @@ public class DetailAnimeActivity extends AppCompatActivity {
         synopsis = animeData.getSynopsis();
         format = animeData.getType();
         episode = animeData.getEpisodes();
+        if(animeData.getEpisodes() == null) episode = 0;
         episodeString = episode.toString();
         duration = animeData.getDuration();
         status = animeData.getStatus();
-//        startdate = animeData.getAired().getFrom();
         season = animeData.getSeason();
         score = animeData.getScore();
+        if(animeData.getScore() == null) score = 0.0;
         scoreString = score.toString();
         popularity = animeData.getPopularity();
+        if(animeData.getPopularity() == null) popularity = 0;
         popularityString = popularity.toString();
         members = animeData.getMembers();
+        if(animeData.getMembers() == null) members = 0;
         membersString = members.toString();
         favorite = animeData.getFavorites();
+        if(animeData.getFavorites() == null) favorite = 0;
         favoriteString = favorite.toString();
         year = animeData.getYear();
+        if(animeData.getYear() == null) year = 0;
         yearString = year.toString();
-//        genreString = animeData.getGenres().get(0).getName();
-//        genreString = null;
-//            genreSize = animeData.getGenres().size();
-//        for (int i=0;i<genreSize;i++){
-//            ctr = genre.get(i).getName();
-//            genreString = genreString.concat(", ");
-//            genreString = genreString.concat(ctr);
-//        }
         englishTitle = animeData.getTitleEnglish();
         japanTitle = animeData.getTitleJapanese();
 
@@ -99,14 +93,12 @@ public class DetailAnimeActivity extends AppCompatActivity {
         episodeDetail.setText(episodeString);
         durationDetail.setText(duration);
         statusDetail.setText(status);
-//        startdateDetail.setText(startdate);
         seasonDetail.setText(season);
         scoreDetail.setText(scoreString);
         popularityDetail.setText(popularityString);
         membersDetail.setText(membersString);
         favoriteDetail.setText(favoriteString);
         yearDetail.setText(yearString);
-//        genreView.setText(genreString);
         englishTitleView.setText(englishTitle);
         japanTitleView.setText(japanTitle);
 
