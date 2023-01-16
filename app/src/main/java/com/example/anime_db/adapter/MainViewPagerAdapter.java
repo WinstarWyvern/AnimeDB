@@ -22,7 +22,7 @@ public class MainViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 1:
-                return new UserFragment();
+                return new UserFragment(this.userName);
             case 2:
                 return new ScheduleFragment();
             default:

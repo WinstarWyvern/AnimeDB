@@ -2,6 +2,8 @@ package com.example.anime_db.homeFragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +49,7 @@ public class ScheduleFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
-
+                Toast.makeText(getContext(), "Failed to Load Data", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -56,11 +58,17 @@ public class ScheduleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_schedule, container, false);
+
+        return inflater.inflate(R.layout.fragment_schedule, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
         spinner = view.findViewById(R.id.spinner_schedule);
         ArrayAdapter<CharSequence> arrayAdapter = ArrayAdapter.createFromResource(
-          this.getContext(),
+                this.getContext(),
                 R.array.days,
                 R.layout.spinner_text
         );
@@ -73,7 +81,6 @@ public class ScheduleFragment extends Fragment {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 days = adapterView.getSelectedItem().toString();
                 CallRetrofit();
-                Toast.makeText(getContext(),"This is " + days +"'s Schedule", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -86,6 +93,5 @@ public class ScheduleFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
 
         CallRetrofit();
-        return view;
     }
 }
